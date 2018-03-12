@@ -1,0 +1,29 @@
+<div class="round-container m-2 justify-content-center">
+	<div class="row m-5">
+		<div class="col-8">
+			<h1>Round {{ currentRound.roundNumber }}</h1>
+			<div *ngIf="players[currentPlayer - 1].name.length">
+				<h2> {{ players[currentPlayer - 1].name }}, it's your turn! </h2>
+			</div>
+			<form class="m-4">
+				<div class="form-group row justify-content-center">
+					<label class="col-3 col-form-label" for="moveSelection">Select Move:</label>
+					<div id="playerOneSelection" class="col-sm-3" *ngIf="currentPlayer === 1">
+						<select class="custom-select" [(ngModel)]="currentRound.playerOneMove" name="currentRound.playerOneMove">
+							<option *ngFor="let moveObject of existingMoves" [value]="moveObject.move">{{moveObject.move}}</option>
+						</select>
+					</div>
+					<div id="playerTwoSelection" class="col-sm-3" *ngIf="currentPlayer === 2">
+						<select class="custom-select" [(ngModel)]="currentRound.playerTwoMove" name="currentRound.playerTwoMove">
+							<option *ngFor="let moveObject of existingMoves" [value]="moveObject.move">{{moveObject.move}}</option>
+						</select>
+					</div>
+				</div>
+				<button class="btn btn-success" (click)="nextPlayerOrRound()" >Continue</button>
+			</form>
+		</div>
+		<div class="col-4 mt-4">
+			<app-score [rounds]="rounds"></app-score>
+		</div>
+	</div>
+</div>

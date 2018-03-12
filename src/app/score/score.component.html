@@ -1,0 +1,16 @@
+<div>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th class="center-text">Round</th>
+                <th class="center-text">Winner</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let round of rounds">
+                <td>{{round.roundNumber}}</td>
+                <td>{{round.winner}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

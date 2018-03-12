@@ -1,0 +1,28 @@
+<div class="winner-container m-2 justify-content-center">
+    <div class="m-4">
+        <h1>We have a winner!!</h1>
+        <h1>{{ gameWinner }} is the new Emperor!</h1>
+    </div>
+    <div class="m-5">
+        <h3>Players' Overall Points</h3>
+        <div class="row justify-content-center">
+            <div  class="m-2 col-6">
+                <table class="table table-sm ">
+                    <thead>
+                        <tr>
+                            <th *ngFor="let player of players" class="center-text">{{player.name}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td *ngFor="let player of players">{{player.points}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-success" routerLink="/home">Play Again</button>
+    </div>
+</div>

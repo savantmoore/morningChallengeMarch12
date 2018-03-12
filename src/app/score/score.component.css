@@ -1,0 +1,8 @@
+.center-text {
+    text-align: center;
+}
+
+.table thead th,
+.table td {
+    border-color: black;
+}
